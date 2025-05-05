@@ -39,3 +39,7 @@ php -S localhost:8000
 ```
 
 Open your web browser and navigate to `http://localhost:8000` to access the application.
+
+---
+
+<center>PingVille | Connect, Play, Explore 🦥</center>
