@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-info">
         <p><strong>🕒 Server Time:</strong> <?= date('Y-m-d H:i:s', time()) ?></p>
-        <p><strong>🧑 Current User:</strong> <?= isset($_SESSION['user_id']) ? htmlspecialchars($user['username']) : 'Guest' ?></p>
+        <p><strong>🧑 Current User:</strong> <?= isset($_SESSION['user_id']) ? htmlspecialchars($user['username'] ?? "Guest") : 'Guest' ?></p>
     </div>
 
     <div class="footer-nav">

@@ -21,10 +21,10 @@
     <main>
         <form action="login.php" method="POST" class="login-form">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" required autocomplete="username">
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
             <button type="submit">Login</button>
             <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
         </form>
@@ -50,6 +50,9 @@
                 echo "<p class='success-message'>Login successful! Welcome back, " . htmlspecialchars($result['user']) . "!</p>";
                 // Show go to home page button
                 echo "<a href='index.php' class='button'>Go to Home</a>";
+
+                // Optionally, you can redirect to the home page after a few seconds via JavaScript
+                echo "<script>setTimeout(function() { window.location.href = 'index.php'; }, 2000);</script>";
             } else {
                 echo "<p class='error-message'>" . htmlspecialchars($result['message']) . "</p>";
             }
