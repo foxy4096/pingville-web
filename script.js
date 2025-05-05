@@ -1,0 +1,2 @@
+// Log a warning message to user to warn them not to paste anything in the console as it could be malicious
+console.warn("Warning: Do not paste anything in the console as it could be malicious. This is a security risk.");
