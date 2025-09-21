@@ -9,6 +9,7 @@ if (!$user) {
 }
 $tokens = get_user_tokens($user['id']); // Get the user's tokens
 $user['tokens'] = $tokens; // Add tokens to the user array
+$user_coins = get_user_coins($user['id']);
 
 
 $success = $_GET['success'] ?? null; // Get success message from URL
@@ -56,6 +57,8 @@ $error = $_GET['error'] ?? null; // Get error message from URL
             <p>User ID: <?php echo htmlspecialchars($user['id']); ?></p>
             <p>Email: <?php echo htmlspecialchars($user['email']); ?></p>
             <p>Last Position: <?php echo htmlspecialchars($user['last_position']); ?></p>
+            <p><strong>Coins:</strong> <?php echo htmlspecialchars($user_coins); ?></p>
+
         </div>
         <!-- Add more user information as needed -->
         <h2>Your Tokens</h2>

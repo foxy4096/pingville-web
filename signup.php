@@ -21,7 +21,10 @@
     <main>
         <form action="signup.php" method="POST" class="signup-form">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="text" id="username" name="username" required value="<?= htmlspecialchars($username ?? '') ?>">
+                <button type="button" id="random-username-btn" class="button">Random</button>
+            </div>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -29,7 +32,7 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Sign Up</button>
+            <button type="submit" class="button">Sign Up</button>
             <p>Already have an account? <a href="login.php">Login here</a></p>
         </form>
 
@@ -51,7 +54,25 @@
         ?>
     </main>
 
-    <?php include "templates/footer.php"; // Include the footer ?>
+    <?php include "templates/footer.php"; // Include the footer 
+    ?>
+    <script>
+        const adjectives = ['Cozy', 'Happy', 'Chill', 'Funny', 'Silly', 'Speedy', 'Bubbly', 'Zany', 'Jolly', 'Mighty'];
+        const animals = ['Sloth', 'Penguin', 'Turtle', 'Otter', 'Koala', 'Panda', 'Fox', 'Rabbit', 'Bear', 'Raccoon'];
+
+        function generateRandomUsername() {
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const animal = animals[Math.floor(Math.random() * animals.length)];
+            const number = Math.floor(Math.random() * 1000); // 0-999
+            return adj + animal + number;
+        }
+
+        document.getElementById('random-username-btn').addEventListener('click', () => {
+            const usernameField = document.getElementById('username');
+            usernameField.value = generateRandomUsername();
+            usernameField.focus();
+        });
+    </script>
 
 </body>
 

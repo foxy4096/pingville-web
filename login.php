@@ -25,7 +25,7 @@
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required autocomplete="current-password">
-            <button type="submit">Login</button>
+            <button type="submit" class="button">Login</button>
             <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
         </form>
         <?php if (isset($_GET['error'])): ?>
